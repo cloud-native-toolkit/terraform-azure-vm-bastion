@@ -1,0 +1,9 @@
+name: azure-vm-bastion
+type: terraform
+description: Module to provision vm-bastion on azure
+tags:
+  - tools
+  - devops
+versions: []
+cloudProvider: azure
+id: github.com/cloud-native-toolkit/terraform-azure-vm-bastion
