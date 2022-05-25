@@ -13,11 +13,6 @@ variable "virtual_network_name" {
   description = "The Azure virtual network name"
 }
 
-variable "network_interface_name" {
-  type        = string
-  description = "The Azure location where the bastion host will be installed"
-}
-
 variable "ip_configuration_name" {
   type        = string
   description = "The Azure location where the bastion host will be installed"
@@ -26,12 +21,6 @@ variable "ip_configuration_name" {
 variable "subnet_id" {
   type        = string
   description = "The Azure subnet id"
-}
-
-variable "private_ip_address_allocation" {
-  type        = string
-  description = "The Azure subnet private ip address alocation"
-  default     = "Dynamic"
 }
 
 variable "bastion_host_name" {

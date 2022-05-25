@@ -1,6 +1,3 @@
-provider "azurerm" {
-  features {}
-}
 
 resource "azurerm_public_ip" "public_ip" {
   name                = var.public_ip_name
