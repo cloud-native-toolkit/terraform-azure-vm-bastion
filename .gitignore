@@ -6,5 +6,5 @@ terraform.tfstate.backup
 *.lock.hcl
 *.tfvars
 provider.tf
-*.workspace.code-workspace
+workspace.code-workspace
 

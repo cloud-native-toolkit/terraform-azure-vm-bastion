@@ -1,21 +1,14 @@
-module "public_ip" {
-  source              = "./module"
-  resource_group_name = module.resource_group.name
-  location            = var.region
-  allocation_method   = "Static"
-  sku                 = "Standard"
-  zones               = ["1"]
+
+module "azure_vm_bastion" {
+  source                      = "./module"
+  resource_group_name         = module.resource_group.name
+  region                      = var.region
+  bastion_host_name           = "ahm_vm_bastion"
+  ip_configuration_name       = "ahm_ip_config_bastion"
+  virtual_network_name        = module.vnet.id
+  subnet_id                   = module.subnets.ids[0]
+  public_ip_name              = "ahm_public_ip"
+  public_ip_allocation_method = "Static"
+  public_ip_sku               = "Standard"
+  public_ip_zones             = ["1"]
 }
-
-module "bastion_host" {
-  source              = "./module"
-  resource_group_name = module.resource_group.name
-  location            = var.region
-
-  ip_configuration {
-    name                 = "ahm_ip_config_bastion"
-    subnet_id            = module.subnets.ids[0]
-    public_ip_address_id = module.public_ip.id
-  }
-}
-
