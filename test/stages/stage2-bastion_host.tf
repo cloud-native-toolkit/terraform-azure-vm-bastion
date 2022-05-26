@@ -1,3 +1,12 @@
+module "public_ip" {
+  source              = "./module"
+  resource_group_name = module.resource_group.name
+  location            = var.region
+  allocation_method   = "Static"
+  sku                 = "Standard"
+  zones               = ["1"]
+}
+
 module "bastion_host" {
   source              = "./module"
   resource_group_name = module.resource_group.name
@@ -9,3 +18,4 @@ module "bastion_host" {
     public_ip_address_id = module.public_ip.id
   }
 }
+

@@ -4,7 +4,7 @@ terraform.tfstate
 terraform.tfstate.backup
 .terraform/
 *.lock.hcl
-locals.tfvars
+*.tfvars
 provider.tf
 *.workspace.code-workspace
 
