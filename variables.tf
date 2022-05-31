@@ -24,11 +24,6 @@ variable "ip_configuration_name" {
 
 }
 
-variable "subnet_id" {
-  type        = string
-  description = "The Azure subnet id"
-}
-
 variable "bastion_host_name" {
   type        = string
   description = "This is the name of Azure bastion host name"
