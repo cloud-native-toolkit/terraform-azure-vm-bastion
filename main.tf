@@ -1,4 +1,13 @@
 
+#For bastion vm host subnet must be "AzureBastionSubnet"
+resource "azurerm_subnet" "subnet" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = var.virtual_network_name
+  address_prefixes     = var.subnet_address_space
+}
+
+
 resource "azurerm_public_ip" "public_ip" {
   name                = var.public_ip_name
   location            = var.region
@@ -15,7 +24,7 @@ resource "azurerm_bastion_host" "bastion_host" {
 
   ip_configuration {
     name                 = var.ip_configuration_name
-    subnet_id            = var.subnet_id
+    subnet_id            = azurerm_subnet.subnet.id
     public_ip_address_id = azurerm_public_ip.public_ip.id
   }
 }

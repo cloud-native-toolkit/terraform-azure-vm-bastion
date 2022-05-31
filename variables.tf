@@ -13,11 +13,17 @@ variable "virtual_network_name" {
   description = "The Azure virtual network name"
 }
 
+variable "subnet_address_space" {
+  type        = list(string)
+  description = "The Azure subnet address prefixes"
+}
+
 variable "ip_configuration_name" {
   type        = string
   description = "The Azure location where the bastion host will be installed"
 
 }
+
 variable "subnet_id" {
   type        = string
   description = "The Azure subnet id"
