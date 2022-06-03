@@ -20,7 +20,7 @@ variable "subnet_address_space" {
 
 variable "ip_configuration_name" {
   type        = string
-  description = "The Azure location where the bastion host will be installed"
+  description = "The Azure ip configuration name which is used in vm bastion host"
 
 }
 
@@ -31,8 +31,7 @@ variable "bastion_host_name" {
 
 variable "public_ip_name" {
   type        = string
-  description = "A Public IP Address id which should be associated with the bastion host resource."
-  default     = ""
+  description = "A Public IP Address name which should be associated with the bastion host resource."
 }
 
 variable "public_ip_allocation_method" {
@@ -49,7 +48,7 @@ variable "public_ip_sku" {
 
 variable "public_ip_zones" {
   type        = list(string)
-  description = "Specifies a list of Availability Zones in which this bastion host should be located."
+  description = "Specifies a list of public ip zones in which this bastion host should be located."
   default     = ["1"]
 }
 
