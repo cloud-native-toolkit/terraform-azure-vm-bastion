@@ -13,6 +13,11 @@ variable "virtual_network_name" {
   description = "The Azure virtual network name"
 }
 
+variable "subnet_id" {
+  type        = string
+  description = "The Azure subnet id"
+}
+
 variable "subnet_address_space" {
   type        = list(string)
   description = "The Azure subnet address prefixes"

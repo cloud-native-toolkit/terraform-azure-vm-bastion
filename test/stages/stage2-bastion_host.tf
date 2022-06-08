@@ -11,4 +11,5 @@ module "azure_vm_bastion" {
   public_ip_sku               = "Standard"
   public_ip_zones             = ["1"]
   subnet_address_space        = ["10.0.0.0/24"]
+  subnet_id                 = module.subnet.subnet_id
 }
