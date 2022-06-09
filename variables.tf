@@ -18,10 +18,11 @@ variable "subnet_id" {
   description = "The Azure subnet id"
 }
 
-variable "subnet_address_space" {
-  type        = list(string)
-  description = "The Azure subnet address prefixes"
-}
+
+# variable "subnet_address_space" {
+#   type        = list(string)
+#   description = "The Azure subnet address prefixes"
+# }
 
 variable "ip_configuration_name" {
   type        = string
@@ -55,6 +56,12 @@ variable "public_ip_zones" {
   type        = list(string)
   description = "Specifies a list of public ip zones in which this bastion host should be located."
   default     = ["1"]
+}
+
+variable "subnet_name" {
+  type        = string
+  description = "The bastion host subnet name"
+  default     = "AzureBastionSubnet"
 }
 
 
