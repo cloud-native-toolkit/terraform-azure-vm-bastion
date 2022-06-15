@@ -1,4 +1,4 @@
-# Azure VM Bastion
+# Azure vm Bastion
 
 ## Module overview
 
