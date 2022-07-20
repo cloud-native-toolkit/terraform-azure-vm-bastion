@@ -26,7 +26,28 @@ module "subnets" {
     udp = {
       destination_port_range = "1194"
       source_port_range = "*"
+    }},
+    {
+    name = "AllowBastionHostCommunication"
+    action = "Allow"
+    direction = "Inbound"
+    source = "VirtualNetwork"
+    destination = "VirtualNetwork"
+    any = {
+      destination_port_range = "*"
+      source_port_range = "8080,5701"
     }
-  }]
+   },
+   {
+    name = "AllowBastionCommunication"
+    action = "Allow"
+    direction = "Outbound"
+    source = "VirtualNetwork"
+    destination = "VirtualNetwork"
+    any = {
+      destination_port_range = "*"
+      source_port_range = "8080,5701"
+    }
+}]
 }
 
