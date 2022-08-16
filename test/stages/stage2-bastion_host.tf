@@ -9,5 +9,5 @@ module "azure_vm_bastion" {
   public_ip_name              = "ahm_public_ip"
   public_ip_allocation_method = "Static"
   public_ip_sku               = "Standard"   
-  subnet_id                 = module.subnets.ids[0]
+  subnet_id                   = module.subnet.id
 }
