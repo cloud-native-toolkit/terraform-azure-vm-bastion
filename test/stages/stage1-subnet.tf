@@ -6,7 +6,7 @@ module "subnets" {
   vpc_name = module.vnet.name
   subnet_name = "AzureBastionSubnet"
   _count = 1
-  ipv4_cidr_blocks = ["10.1.1.0/24"]
+  ipv4_cidr_blocks = ["10.0.1.0/24"]
   acl_rules = [{
     name = "ssh-inbound"
     action = "Allow"
