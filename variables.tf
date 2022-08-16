@@ -18,12 +18,6 @@ variable "subnet_id" {
   description = "The Azure subnet id"
 }
 
-
-# variable "subnet_address_space" {
-#   type        = list(string)
-#   description = "The Azure subnet address prefixes"
-# }
-
 variable "ip_configuration_name" {
   type        = string
   description = "The Azure ip configuration name which is used in vm bastion host"
