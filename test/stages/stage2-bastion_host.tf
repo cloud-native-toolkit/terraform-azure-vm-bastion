@@ -8,6 +8,7 @@ module "azure_vm_bastion" {
   virtual_network_name        = module.vnet.name
   public_ip_name              = "ahm_public_ip"
   public_ip_allocation_method = "Static"
-  public_ip_sku               = "Standard"   
-  subnet_id                   = module.subnets.id
+  public_ip_sku               = "Standard"
+  vm_bastion_subnet_name      = "AzureBastionSubnet"
+  vm_bastion_subnet_ipv4_cidr_blocks = ["10.0.1.0/24"]
 }
