@@ -13,21 +13,21 @@ variable "virtual_network_name" {
   description = "The Azure virtual network name"
 }
 
-variable "subnet_id" {
-  type        = string
-  description = "The Azure subnet id"
-}
-
-
-# variable "subnet_address_space" {
-#   type        = list(string)
-#   description = "The Azure subnet address prefixes"
-# }
-
 variable "ip_configuration_name" {
   type        = string
   description = "The Azure ip configuration name which is used in vm bastion host"
 
+}
+
+variable "vm_bastion_subnet_name" {
+  type        = string
+  description = "It is mandatory that the associated subnet is named GatewaySubnet"
+  default     = "AzureBastionSubnet"
+}
+
+variable "vm_bastion_subnet_ipv4_cidr_blocks" {
+  type        = string
+  description = "This defines the CIDR Value for the VM-Bastion-Subnet"
 }
 
 variable "bastion_host_name" {
@@ -57,11 +57,4 @@ variable "public_ip_zones" {
   description = "Specifies a list of public ip zones in which this bastion host should be located."
   default     = ["1"]
 }
-
-variable "subnet_name" {
-  type        = string
-  description = "The bastion host subnet name"
-  default     = "AzureBastionSubnet"
-}
-
 
